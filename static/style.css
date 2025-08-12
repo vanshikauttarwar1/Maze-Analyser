@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+    font-family: 'Fredoka One', cursive;
+    background: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #ff6347;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.canvas-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+#mazeCanvas {
+    background: #fdfdfd;
+    border: 5px solid #87ceeb;
+    border-radius: 15px;
+    cursor: crosshair;
+    max-width: 100%;
+    height: auto;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.color-picker {
+    display: flex;
+    gap: 0.5rem;
+    border: 2px solid #ddd;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.color-box {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s;
+}
+
+.color-box:hover {
+    transform: scale(1.1);
+}
+
+.color-box.selected {
+    border-color: #333;
+}
+
+.btn {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#generateBtn, #playAgainBtn { background-color: #28a745; }
+#eraseBtn { background-color: #ffc107; }
+#doneBtn { background-color: #007bff; }
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.feedback-container {
+    margin-top: 1rem;
+    min-height: 50px;
+}
+
+#feedbackText {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Popper animation */
+.popper {
+    animation: popper-animation 0.5s ease-out;
+}
+
+@keyframes popper-animation {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive design for tablets */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 1rem;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .controls {
+        flex-direction: column;
+    }
+    .btn {
+        width: 80%;
+        margin-bottom: 0.5rem;
+    }
+    
+}

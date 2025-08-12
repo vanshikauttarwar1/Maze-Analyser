@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Way to Home - Maze Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Way to Home</h1>
+        <div class="canvas-container">
+            <canvas id="mazeCanvas" width="1024" height="1024"></canvas>
+            <div id="loader" class="loader" style="display: none;"></div>
+        </div>
+        <div class="controls">
+            <button id="generateBtn" class="btn">Generate</button>
+            <button id="eraseBtn" class="btn btn-warning">Erase</button>
+            <button id="doneBtn" class="btn btn-action">Done!</button>
+        </div>
+        <div class="feedback-section">
+            <p id="feedbackText"></p>
+            <button id="playAgainBtn" class="btn btn-danger" style="display: none;">Play Again</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
